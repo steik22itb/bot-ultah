@@ -1,0 +1,25 @@
+{
+  "name": "bot-ultah",
+  "version": "1.0.0",
+  "description": "A LINE app bot to notify people who are having a birthday",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WazeAzure/bot-ultah.git"
+  },
+  "keywords": [
+    "LINE-bot"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WazeAzure/bot-ultah/issues"
+  },
+  "homepage": "https://github.com/WazeAzure/bot-ultah#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
