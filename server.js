@@ -71,7 +71,7 @@ var command = {
 function mainProgram(event){
   var args = event.message.text.split(" ");
   if(event.message.text == "$ultah"){
-    var ans = ""
+    var ans = "none"
     // command.$ultah.map((obj, key) => {
     //   console.log(obj.nama);
     //   ans = ans.concat(`${obj.nama}\n${obj.ttl}\n\n`)
@@ -121,5 +121,5 @@ onValue(starCountRef, (snapshot) => {
   }
 });
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {console.log("Running on 3000")});
