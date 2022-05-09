@@ -70,19 +70,26 @@ var command = {
 
 function mainProgram(event){
   var args = event.message.text.split(" ");
-  if(event.message.text == "$ultah"){
+  if(event.message.text == "$ultah all"){
+    var ans = ""
+    command.$ultah.map((obj, key) => {
+      console.log(obj.nama);
+      ans = ans.concat(`${obj.nama}\n${obj.ttl}\n\n`)
+    })
+    console.log(ans)
+    return client.replyMessage(event.replyToken, {type:'text', text: ans});
+  } else if(event.message.text == "$ultah"){
     var ans = "none"
     // command.$ultah.map((obj, key) => {
     //   console.log(obj.nama);
     //   ans = ans.concat(`${obj.nama}\n${obj.ttl}\n\n`)
     // })
     // console.log(ans)
-    console.log(arrayList.tdyUltah);
+    // console.log(arrayList.tdyUltah);
     arrayList.tdyUltah.map((obj, key) => {
       ans = ans.concat(`${obj.nama}\n${obj.ttl[0]} ${obj.ttl[1]}\n\n`)
     })
     return client.replyMessage(event.replyToken, {type:'text', text: ans});
-
   } else if(command[event.message.text]) { //jika user tidak mengirimkan pesan berupa teks (bukan gambar, lokasi, atau sejenisnya)
     return client.replyMessage(event.replyToken, {type:'text', text: command[event.message.text]}); //balas dengan pesan "Hello, world"
   } else {
