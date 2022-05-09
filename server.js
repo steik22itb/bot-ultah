@@ -6,8 +6,8 @@ const axios = require('axios');
 
 // LINE APP
 const config = {
-    channelAccessToken: "L5J/lwEeHb7ygRkbdyXKZVZqTN2tYHeivNY15spwtYc7VyPe6qdNgIXFRBqOGTIZSUKVHlA/OnJuwbXHCnTMUWrHyex0Jzu1R3angEF29A/efbWnLeNVBSvXJSwwraN2rEWxgYBFDQnN2sUN9soYQgdB04t89/1O/w1cDnyilFU=",
-    channelSecret: "098384b2228d8dc2f1bc1df821aca255",
+    channelAccessToken: process.env.TOKEN || "L5J/lwEeHb7ygRkbdyXKZVZqTN2tYHeivNY15spwtYc7VyPe6qdNgIXFRBqOGTIZSUKVHlA/OnJuwbXHCnTMUWrHyex0Jzu1R3angEF29A/efbWnLeNVBSvXJSwwraN2rEWxgYBFDQnN2sUN9soYQgdB04t89/1O/w1cDnyilFU=",
+    channelSecret: process.env.SECRET || "098384b2228d8dc2f1bc1df821aca255",
 };
 const client = new line.Client(config);
 const app = express();
@@ -77,6 +77,7 @@ function mainProgram(event){
     //   ans = ans.concat(`${obj.nama}\n${obj.ttl}\n\n`)
     // })
     // console.log(ans)
+    console.log(arrayList.tdyUltah);
     arrayList.tdyUltah.map((obj, key) => {
       ans = ans.concat(`${obj.nama}\n${obj.ttl[0]} ${obj.ttl[1]}\n\n`)
     })
